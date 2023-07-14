@@ -1,14 +1,22 @@
-# sortear-times
+# Sortear times
 
-This template should help get you started developing with Vue 3 in Vite.
+Projeto desenvolvido para treinamento e estudos, utilizando as seguintes tecnologias:
+- VueJS 3;
+- Vite;
+- Pinia;
+- Capacitor;
+- Cypress;
 
-## Recommended IDE Setup
+## O projeto
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Ele consiste em um sorteador de times, realizado para ser utilizado nas peladas (futebol), com o intuíto de dividir os jogadores de acordo com a quantidade de pessoas.
+Algo muito comum em nossos jogos, é que após a divisão dos times, sempre desejamos movimentar alguns jogadores para equilibrar melhor, sendo assim, adicionada função para poder realizar esse remanejeio.
 
-## Customize configuration
+O desenvolvimento foi dividido em partes.
+- [Protótipo](https://code.visualstudio.com/)
+- [Link do projeto](https://code.visualstudio.com/)
+- [Aplicativo](https://code.visualstudio.com/)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
