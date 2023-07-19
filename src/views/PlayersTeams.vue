@@ -1,15 +1,17 @@
 <template>
-  <div class="page-players-teams container">
+  <div class="container page-players-teams">
     <app-header title="Times sorteados" />
 
-    <p class="page-subtitle">Caso queira sortear o time novamente, basta clicar no botão inferior.</p>
+    <p class="page-subtitle">
+      Caso queira sortear o time novamente, basta clicar no botão inferior.
+    </p>
 
     <app-team-card
-      class="page-players-teams__team-card"
       v-for="(team, index) in drawnTeams"
       :key="index"
-      :team-name="index"
+      class="page-players-teams__team-card"
       :team="team"
+      :team-name="index"
       @on-handle-lock="handleLock"
     />
 

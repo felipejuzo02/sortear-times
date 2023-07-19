@@ -1,16 +1,24 @@
 <template>
   <header class="app-header">
-    <button class="actions-button" @click="$router.go(-1)">
+    <button
+      class="actions-button"
+      type="button"
+      @click="$router.go(-1)"
+    >
       <span class="material-symbols-outlined">chevron_left</span>
     </button>
 
-    <p class="app-header__title">{{ title }}</p>
+    <p class="app-header__title">
+      {{ title }}
+    </p>
 
-    <button 
-      :class="shareClasses"
+    <button
       class="actions-button"
+      :class="shareClasses"
       :disabled="!useShare"
-      @click="onShareScreen">
+      type="button"
+      @click="onShareScreen"
+    >
       <span class="material-symbols-outlined">share</span>
     </button>
   </header>
@@ -41,7 +49,6 @@ export default {
 
 <style lang="scss">
 .app-header {
-  // background-color: red;
   display: flex;
   justify-content: space-between;
   padding: 1.25em 0;

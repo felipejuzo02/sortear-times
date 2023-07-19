@@ -1,21 +1,28 @@
 <template>
   <div class="app-input">
     <label>
-      <span :id="name" class="app-input__label">{{ label }}</span>
+      <span
+        :id="name"
+        class="app-input__label"
+      >
+        {{ label }}
+      </span>
 
       <input
-        :type="type"
         class="app-input__input"
+        :type="type"
         :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)"
         @focus="handleFocus"
         @focusout="handleFocusOut"
+        @input="$emit('update:modelValue', $event.target.value)"
       >
 
       <button
-        @click="onClickAdd"
-        class="app-input__add"
         v-if="useAdd"
+        class="app-input__add"
+        :disabled="isDisabledAdd"
+        type="button"
+        @click="onClickAdd"
       >
         <span class="material-symbols-outlined">add</span>
       </button>
@@ -50,6 +57,10 @@ export default {
     },
 
     useAdd: {
+      type: Boolean
+    },
+
+    isDisabledAdd: {
       type: Boolean
     }
   },
@@ -134,6 +145,11 @@ export default {
     cursor: pointer;
     color: $white;
     background-color: $primary;
+  
+    &:disabled {
+    cursor: not-allowed;
+    background-color: rgba($color: $primary, $alpha: .4);
+  }
   }
 
   &__input {
@@ -144,11 +160,6 @@ export default {
     background-color: $white;
     border: 1px solid $grey-1;
     outline: none;
-
-    // &:focus {
-    //   background-color: #2e2e2e;
-    //   border-bottom: 2px solid #b4b4b4;
-    // }
   }
 }
 </style>

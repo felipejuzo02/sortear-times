@@ -1,18 +1,21 @@
 <template>
-  <div class="page-players-add container">
+  <div class="container page-players-add">
     <div>
       <app-header title="Adicionar jogadores" />
 
-      <p class="page-subtitle">Insira o nome dos jogares e quantidade de jogadores por time.</p>
+      <p class="page-subtitle">
+        Insira o nome dos jogares e quantidade de jogadores por time.
+      </p>
 
       <div>
         <app-input
-          class="page-players-add__input"
           v-model="player"
+          class="page-players-add__input"
+          :is-disabled-add="isShortPlayerName"
           label="Adicionar jogador..."
+          name="player"
           use-add
           @on-click-add="onClickAdd"
-          name="player"
         />
 
         <app-input
@@ -31,10 +34,10 @@
 
     <app-button
       class="page-players-add__button"
-      label="Sortear"
-      @click="onClickSort"
       :disabled="notEnoughPlayers"
+      label="Sortear"
       :loading="isLoadingSortButton"
+      @click="onClickSort"
     />
   </div>
 </template>
@@ -64,7 +67,7 @@ export default {
       player: '',
       playersQuantity: null,
       allPlayers: [],
-      isLoadingSortButton: false
+      isLoadingSortButton: false,
     }
   },
 
@@ -75,14 +78,18 @@ export default {
 
     notEnoughPlayers () {
       return this.allPlayers.length < 4 || this.playersQuantity === null
-    }
+    },
+
+    isShortPlayerName () {
+      return this.player.length < 3
+    },
   },
 
   methods: {
     ...mapActions(useTeamsStore, ['setTeams']),
 
     onClickAdd () {
-      if (this.player.length < 3) return
+      if (this.isShortPlayerName) return
 
       this.allPlayers.push({ name: this.player, id: this.getIndexPlayer})
       this.resetPlayerModel()

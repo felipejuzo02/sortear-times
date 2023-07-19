@@ -1,15 +1,18 @@
 <template>
   <button 
     class="app-button"
+    type="button"
   >
     <span 
       v-if="loading" 
-      class="material-symbols-outlined loading"
+      class="loading material-symbols-outlined"
     >
       refresh
     </span>
 
-    <p v-else>{{ formatedLabel }}</p>
+    <p v-else>
+      {{ formatedLabel }}
+    </p>
   </button>
 </template>
 
