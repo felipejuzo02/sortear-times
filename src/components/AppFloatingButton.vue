@@ -1,5 +1,8 @@
 <template>
-  <button class="app-floating-button">
+  <button
+    class="app-floating-button"
+    type="button"
+  >
     <span class="material-symbols-outlined">refresh</span>
   </button>
 </template>

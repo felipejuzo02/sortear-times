@@ -1,19 +1,20 @@
 <template>
   <ul class="app-players-list">
-    <li class="app-players-list__item" v-for="(item, index) in items" :key="index">
+    <li
+      v-for="(item, index) in items"
+      :key="index"
+      class="app-players-list__item"
+    >
       <p>{{ item.name }}</p>
 
-      <div>
-        <!-- <button class="actions-button app-players-list__btns" @click="$emit('onClickRemove', index)">
-          <span class="app-players-list__tooltip">Goleiro</span>
-          <span class="material-symbols-outlined">sports_mma</span>
-        </button> -->
-  
-        <button class="actions-button app-players-list__btns" @click="$emit('onClickRemove', index)">
-          <!-- <span class="app-players-list__tooltip">Remover</span> -->
-          <span class="material-symbols-outlined">remove</span>
-        </button>
-      </div>
+
+      <button
+        class="actions-button app-players-list__btns"
+        type="button"
+        @click="$emit('onClickRemove', index)"
+      >
+        <span class="material-symbols-outlined">remove</span>
+      </button>
     </li>
   </ul>
 </template>

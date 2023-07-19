@@ -10,6 +10,7 @@
       v-for="(team, index) in drawnTeams"
       :key="index"
       class="page-players-teams__team-card"
+      :class="revealClass"
       :team="team"
       :team-name="index"
       @on-handle-lock="handleLock"
@@ -42,16 +43,22 @@ export default {
 
   data () {
     return {
-      drawnTeams: {}
+      drawnTeams: {},
+      isRevealClasses: false
     }
   },
 
   computed: {
     ...mapState(useTeamsStore, ['teams']),
+
+    revealClass () {
+      return this.isRevealClasses && 'page-players-teams__team-card page-players-teams__team-card--reveal'
+    }
   },
 
   created () {
     this.drawnTeams = Object.assign({}, this.teams)
+    this.changeDataRevealClasses()
   },
 
   methods: {
@@ -79,6 +86,12 @@ export default {
 
     onRedrawTeams () {
       this.drawnTeams = redrawTeams(this.drawnTeams)
+    },
+
+    changeDataRevealClasses () {
+      setTimeout(() => {
+        this.isRevealClasses = true
+      }, 200)
     }
   }
 }
@@ -93,7 +106,13 @@ export default {
   }
 
   &__team-card {
+    opacity: 0;
+    transition: all .2s ease-in;
     margin-bottom: 16px;
+
+    &--reveal {
+      opacity: 1;
+    }
   }
 }
 </style>

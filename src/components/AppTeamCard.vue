@@ -1,6 +1,8 @@
 <template>
   <div class="app-team-card">
-    <header class="app-team-card__title">{{ formattedTeamName }}</header>
+    <header class="app-team-card__title">
+      {{ formattedTeamName }}
+    </header>
 
     <ul class="app-team-card__list">
       <li
@@ -10,10 +12,14 @@
       >
         <p>{{ player.name }}</p>
 
-        <button class="app-team-card__actions-button" @click="$emit('onHandleLock', player)">
+        <button
+          class="app-team-card__actions-button"
+          type="button"
+          @click="$emit('onHandleLock', player)"
+        >
           <span
-            :class="getLockIconColor(player)"
             class="material-symbols-outlined"
+            :class="getLockIconColor(player)"
           >
             {{ lockIcon(player) }}
           </span>
