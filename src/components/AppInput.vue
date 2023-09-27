@@ -53,7 +53,7 @@ export default {
     type: {
       type: String,
       default: 'text',
-      validator: (value) => ['text', 'number'].includes(value)
+      validator: value => ['text', 'number'].includes(value)
     },
 
     useAdd: {
@@ -147,9 +147,9 @@ export default {
     background-color: $primary;
   
     &:disabled {
-    cursor: not-allowed;
-    background-color: rgba($color: $primary, $alpha: .4);
-  }
+      cursor: not-allowed;
+      background-color: rgba($color: $primary, $alpha: .4);
+    }
   }
 
   &__input {

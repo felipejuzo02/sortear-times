@@ -67,7 +67,7 @@ export default {
       player: '',
       playersQuantity: null,
       allPlayers: [],
-      isLoadingSortButton: false,
+      isLoadingSortButton: false
     }
   },
 
@@ -82,7 +82,7 @@ export default {
 
     isShortPlayerName () {
       return this.player.length < 3
-    },
+    }
   },
 
   methods: {
@@ -131,8 +131,6 @@ export default {
 .page-players-add {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
 
   &__input {
     margin-bottom: .6em;
