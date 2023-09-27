@@ -1,8 +1,16 @@
 <template>
-  <main class="page-home-view container">
-    <img src="../assets/logo.svg" alt="Logo">
+  <main class="container page-home-view">
+    <img
+      alt="Logo"
+      src="../assets/logo.svg"
+    >
 
-    <app-button :loading="loading" label="Sortear times" @click="onClickButton" />
+    <app-button
+      data-cy="draw-teams-btn"
+      label="Sortear times"
+      :loading="loading"
+      @click="onClickButton"
+    />
 
     <div class="page-home-view__ads">
       Google ADS

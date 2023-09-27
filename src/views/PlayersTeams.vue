@@ -99,6 +99,8 @@ export default {
 
 <style lang="scss">
 .page-players-teams {
+  padding-bottom: 16px;
+
   &__floating-button {
     position: fixed;
     right: 20px;
