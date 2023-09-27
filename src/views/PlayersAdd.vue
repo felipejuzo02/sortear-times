@@ -11,6 +11,7 @@
         <app-input
           v-model="player"
           class="page-players-add__input"
+          data-cy="add-player-input"
           :is-disabled-add="isShortPlayerName"
           label="Adicionar jogador..."
           name="player"
@@ -20,6 +21,7 @@
 
         <app-input
           v-model="playersQuantity"
+          data-cy="quantity-players-input"
           label="Quantidade de jogadores por time..."
           type="number"
         />
@@ -34,6 +36,7 @@
 
     <app-button
       class="page-players-add__button"
+      data-cy="draw-teams-btn"
       :disabled="notEnoughPlayers"
       label="Sortear"
       :loading="isLoadingSortButton"

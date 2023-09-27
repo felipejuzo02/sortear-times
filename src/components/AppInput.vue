@@ -20,6 +20,7 @@
       <button
         v-if="useAdd"
         class="app-input__add"
+        data-cy="add-player-btn"
         :disabled="isDisabledAdd"
         type="button"
         @click="onClickAdd"
