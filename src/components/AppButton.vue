@@ -46,7 +46,7 @@ export default {
   background-color: $primary;
   color: $white;
   border: none;
-  border-radius: 26px;
+  border-radius: 16px;
   font-size: 1em;
   cursor: pointer;
   display: flex;

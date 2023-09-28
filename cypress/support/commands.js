@@ -23,3 +23,26 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('sort', (players) => {
+  players.forEach(player => {
+    cy.get('[data-cy="add-player-input"]')
+      .should('be.visible')
+      .type(player)
+
+    cy.get('[data-cy="add-player-btn"]').click()
+  })
+
+  cy.get('[data-cy="quantity-players-input"]')
+    .should('be.visible')
+    .type(4)
+
+  cy.get('[data-cy="draw-teams-btn"]').click()
+})
+
+Cypress.Commands.add('checkPlayersQuantity', (quantity) => {
+  cy.get('.app-team-card__item')
+    .should(($item) => {
+      expect($item).to.have.length(quantity)
+    })
+})

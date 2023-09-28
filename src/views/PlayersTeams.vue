@@ -17,6 +17,7 @@
     />
 
     <app-floating-button
+      data-cy="redraw-button"
       class="page-players-teams__floating-button"
       @click="onRedrawTeams"
     />

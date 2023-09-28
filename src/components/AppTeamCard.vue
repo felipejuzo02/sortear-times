@@ -10,11 +10,12 @@
         :key="index"
         class="app-team-card__item"
       >
-        <p>{{ player.name }}</p>
+        <p data-cy="player-name">{{ player.name }}</p>
 
         <button
           class="app-team-card__actions-button"
           type="button"
+          data-cy="handle-lock-button"
           @click="$emit('onHandleLock', player)"
         >
           <span
