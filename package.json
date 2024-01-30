@@ -1,6 +1,6 @@
 {
   "name": "sortear-times",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "test": "npx cypress open"
+    "test": "npx cypress open",
+    "release": "release-it"
   },
   "dependencies": {
     "pinia": "^2.0.36",
@@ -16,6 +17,7 @@
     "vue-router": "^4.2.0"
   },
   "devDependencies": {
+    "@release-it/keep-a-changelog": "^5.0.0",
     "@rushstack/eslint-patch": "^1.2.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/eslint-config-prettier": "^7.1.0",
@@ -24,6 +26,7 @@
     "eslint-plugin-cypress": "^2.14.0",
     "eslint-plugin-vue": "^9.11.0",
     "prettier": "^2.8.8",
+    "release-it": "^17.0.3",
     "sass": "^1.62.1",
     "sass-loader": "^13.3.1",
     "style-loader": "^3.3.3",

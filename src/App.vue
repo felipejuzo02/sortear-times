@@ -1,6 +1,6 @@
 
 <template>
-  <RouterView />
+  <router-view />
 </template>
 
 <script setup>
